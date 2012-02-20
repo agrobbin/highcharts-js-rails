@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Highcharts::VERSION
   s.authors     = ['Alex Robbin']
   s.email       = ['agrobbin@gmail.com']
-  s.homepage    = 'http://github.com/agrobbin/highcharts-js-rails'
+  s.homepage    = 'https://github.com/agrobbin/highcharts-js-rails'
   s.summary     = %q{Easily configure a Highcharts JS chart for use in a Rails application}
   s.description = s.summary
 
