@@ -19,7 +19,7 @@ module Highcharts
     private
       def render_all
         content = [render_container, render_titles, render_plot_options, render_axes, render_series, render_legend, render_tooltip].flatten.compact.join(",")
-        if Rails.env.production?
+        if ::Rails.env.production?
           content
         else
           content.gsub(/(,|{|\[)/, "\\1\n").gsub(/(}|\])/, "\n\\1")
