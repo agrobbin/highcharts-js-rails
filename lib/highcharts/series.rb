@@ -11,9 +11,10 @@ module Highcharts
       "}"
     end
 
-    def render_data
-      "data: #{data.first.is_a?(Array) ? data : data.collect(&:to_f)}"
-    end
+    private
+      def render_data
+        "data: #{data.first.is_a?(Array) ? data : data.collect(&:to_f)}"
+      end
 
   end
 end

@@ -9,15 +9,16 @@ module Highcharts
       "}"
     end
 
-    def render_data_labels
-      "dataLabels: {" +
-        "enabled: #{data_labels == false ? 'false' : 'true'}" +
-      "}"
-    end
+    private
+      def render_data_labels
+        "dataLabels: {" +
+          "enabled: #{data_labels == false ? 'false' : 'true'}" +
+        "}"
+      end
 
-    def render_legend
-      "showInLegend: #{legend ? 'true' : 'false'}"
-    end
+      def render_legend
+        "showInLegend: #{legend ? 'true' : 'false'}"
+      end
 
   end
 end
