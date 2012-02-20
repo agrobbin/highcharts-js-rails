@@ -1,10 +1,12 @@
+require 'action_view'
+
 module Highcharts
   class Base < ActionView::Base
-    
+
     def initialize(*args)
       args.extract_options!.each {|arg, value| self.send("#{arg}=", value)}
     end
-    
+
     def render_options(args)
       attrs = []
       args.each do |t, a|
@@ -14,6 +16,6 @@ module Highcharts
       end
       attrs
     end
-    
+
   end
 end

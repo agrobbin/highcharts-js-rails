@@ -1,8 +1,3 @@
-require 'highcharts/axis'
-require 'highcharts/base'
-require 'highcharts/chart'
-require 'highcharts/legend'
-require 'highcharts/plot_options'
-require 'highcharts/rails'
-require 'highcharts/series'
-require 'highcharts/version'
+require 'rails'
+
+%w(base axis chart legend plot_options rails series version).each {|f| require "highcharts/#{f}"}
