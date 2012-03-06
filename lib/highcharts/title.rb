@@ -1,8 +1,8 @@
 class Highcharts
-  class Chart < Base
+  class Title < Base
 
     def initialize(opts = {})
-      @default = :renderTo
+      @default = :text
       super
     end
 

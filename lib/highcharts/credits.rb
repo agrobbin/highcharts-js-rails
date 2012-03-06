@@ -1,8 +1,8 @@
 class Highcharts
-  class Chart < Base
+  class Credits < Base
 
     def initialize(opts = {})
-      @default = :renderTo
+      @default = :enabled
       super
     end
 

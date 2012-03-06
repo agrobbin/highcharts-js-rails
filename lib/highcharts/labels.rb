@@ -1,9 +1,9 @@
 class Highcharts
-  class Legend < Base
+  class Labels < Base
 
     def initialize(opts = {})
       @default = :enabled
-      @skip_quotation = :labelFormatter
+      @skip_quotation = :formatter
       super
     end
 
