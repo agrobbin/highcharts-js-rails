@@ -1,4 +1,4 @@
-## v0.1 (2012-03-06) ##
+## v0.1.0 (2012-03-17) ##
 
 * Near-complete rewrite of the entire gem. Now accepts all major Highcharts options, providing convenient help throughout the way.
 * Bump dependency on railties to 3.1.
