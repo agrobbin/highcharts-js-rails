@@ -1,3 +1,7 @@
+## v0.1.3 (2012-03-17) ##
+
+* require Highcharts::Series.
+
 ## v0.1.2 (2012-03-17) ##
 
 * We didn't change the Engine and Version files to make Highcharts a class instead of a module.
