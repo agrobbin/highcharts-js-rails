@@ -1,3 +1,8 @@
+## v0.1.1 (2012-03-17) ##
+
+* Update Highcharts to 2.2.1.
+* Remove unnecessary .DS_Store files.
+
 ## v0.1.0 (2012-03-17) ##
 
 * Near-complete rewrite of the entire gem. Now accepts all major Highcharts options, providing convenient help throughout the way.
