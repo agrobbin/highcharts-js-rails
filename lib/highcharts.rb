@@ -8,8 +8,8 @@ class Highcharts < ActionView::Base
   def initialize
     @options = {}
 
-    @base_options = %w(labels lang loading series)
-    @default_options = %w(chart colors credits legend point symbols title tooltip)
+    @base_options = %w(labels lang loading)
+    @default_options = %w(chart colors credits legend point series symbols title tooltip)
     @custom_options = {
       'plotOptions' => 'PlotOptions',
       'subtitle' => 'Title',
@@ -44,11 +44,14 @@ class Highcharts < ActionView::Base
     end
   end
 
+  # Called by default when you output the final chart. Spits out jQuery-encapsulated Highcharts JavaScript.
+  # <% chart = Highcharts.new -%>
+  # <%= chart %>
   def to_s
     javascript_tag "$(function(){" +
-      "new Highcharts.Chart(" +
+      "new Highcharts.Chart({" +
         to_json +
-      ")" +
+      "})" +
     "});"
   end
 
@@ -57,7 +60,7 @@ class Highcharts < ActionView::Base
     # will not work the correct way (introspecting on the class and failing to simply call #to_json on each
     # subsequent class), we have to do it ourselves.
     def to_json
-      options.collect {|k, v| "#{k}: #{v.is_a?(Array) ? "[#{v.collect(&:to_json).join(',')}]" : v.to_json}"}.join(',')
+      options.collect {|k, v| "\"#{k}\":#{v.is_a?(Array) ? "[{#{v.collect(&:to_json).join('},{')}}]" : "{#{v.to_json}}"}"}.join(',')
     end
 
     # Figure out which class a specific method should map too. Ones within the base_options array will be Highcharts::Base.

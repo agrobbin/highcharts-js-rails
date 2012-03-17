@@ -5,7 +5,12 @@ class Highcharts
       def initialize(opts = {})
         @default = :title
         @suboptions = {
-          :stackLabels => 'Axis::StackLabels'
+          :events => 'Axis::Events',
+          :labels => 'Labels',
+          :plotBands => 'Axis::PlotBands',
+          :plotLines => 'Axis::PlotLines',
+          :stackLabels => 'Axis::StackLabels',
+          :title => 'Title'
         }
         super
       end

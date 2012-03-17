@@ -6,6 +6,13 @@ class Highcharts
 
       def initialize(opts = {})
         @default = :categories
+        @suboptions = {
+          :events => 'Axis::Events',
+          :labels => 'Labels',
+          :plotBands => 'Axis::PlotBands',
+          :plotLines => 'Axis::PlotLines',
+          :title => 'Title'
+        }
         # Check to see if we want to skip automatic formatting of categories.
         @skip_category_formatting = true if opts.delete(:skip_category_formatting)
         super
@@ -22,7 +29,7 @@ class Highcharts
         # Either pass :auto to the :tickInterval option, or do not include the option.
         # This will only be calculated if the :categories option is passed to the Axis.
         def automate_tick_interval
-          @options[:tickInterval] = (Math.sqrt(categories.length) < 5 ? 1 : Math.sqrt(categories.length)).floor if options[:categories].present?
+          @options[:tickInterval] = (Math.sqrt(options[:categories].length) < 5 ? 1 : Math.sqrt(options[:categories].length)).floor if options[:categories].present?
         end
 
         # Used in the #to_json method to cleanly format the categories for this axis. Depending on the class

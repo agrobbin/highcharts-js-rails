@@ -19,46 +19,33 @@ class Highcharts
           raise ArgumentError, "You must pass a Hash to #{self.class}. You passed #{options.inspect}"
         end
       end
+      # If there is an option that is available as a suboption to the current class,
+      # let's set the option to an instance of that subclass.
+      options.each do |k, v|
+        @options[k] = "Highcharts::#{suboptions[k]}".constantize.new(v) if suboptions.keys.include?(k)
+      end
     end
 
     def inspect
       "#<#{self.class}:0x#{object_id} #{options.inspect}>"
     end
 
-    def method_missing(method, *args)
-      # If there are arguments passed to this method, we want to set the option.
-      if args.length > 0
-        # If this method is an option that is available as a suboption to the current class,
-        # let's set the option to an instance of that subclass.
-        @options[method] = if suboptions.keys.include?(method)
-          "Highcharts::#{suboptions[method]}".constantize.new(*args)
-        # Otherwise, just extract the options passed to the method and set the option to that hash.
-        else
-          args.extract_options!
-        end
-      # Otherwise, just return the option's value.
-      else
-        options[method]
-      end
-    end
-
     # This method is used in the parent class, Highcharts, in order to render the options in a JavaScript-friendly (JSON) format.
     def to_json
-      json = Rails.env.production? ? options.to_json : JSON.pretty_generate(options)
-
-      if skip_quotation.present?
-        Array.wrap(skip_quotation).each do |opt|
-          # The first part of this regex matches the option's key, for example, if opt is formatter, it will match "formatter":
-          # The second part will match anything within double quotes until it runs into either ",", "}", or a line break (the end of the json value)
-          # It then replaces that key/value pair with an unquoted version.
-          # Ex:
-          # "formatter": "function(){ return 'test'; }"
-          # becomes...
-          # "formatter": function(){ return 'test'; }
-          json = json.gsub(/"(#{opt})"\: ?"(.*?)"([,}\s])/i, '"\\1":\\2\\3')
-        end
+      json = options.collect do |k, v|
+        "\"#{k}\":" +
+        (suboptions.keys.include?(k) && !v.is_a?(Array) ? '{' : '') +
+        (v.is_a?(Array) && suboptions.keys.include?(k) ? "[{#{v.collect(&:to_json).join('},{')}}]" : check_quotation(k, v.to_json)) +
+        (suboptions.keys.include?(k) && !v.is_a?(Array) ? '}' : '')
       end
-      json
+      json.join(',')
+    end
+
+    # This method is used in #to_json to remove the first and last characters from an option's value.
+    # In the end this removes the encapsulating quotation marks (") from a specific option, provided
+    # it is included in the current class's skip_quotation array.
+    def check_quotation(key, json)
+      skip_quotation.present? && Array.wrap(skip_quotation).include?(key) ? json[1..-2] : json
     end
 
   end
