@@ -1,10 +1,9 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require 'highcharts/version'
 
 Gem::Specification.new do |s|
   s.name        = 'highcharts-js-rails'
-  s.version     = Highcharts::VERSION
+  s.version     = '0.1.3'
   s.authors     = ['Alex Robbin']
   s.email       = ['agrobbin@gmail.com']
   s.homepage    = 'https://github.com/agrobbin/highcharts-js-rails'
