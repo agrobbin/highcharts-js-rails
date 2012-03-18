@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'highcharts-js-rails'
-  s.version     = '0.1.3'
+  s.version     = '0.1.4'
   s.authors     = ['Alex Robbin']
   s.email       = ['agrobbin@gmail.com']
   s.homepage    = 'https://github.com/agrobbin/highcharts-js-rails'

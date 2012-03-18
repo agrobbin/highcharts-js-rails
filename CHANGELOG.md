@@ -1,3 +1,8 @@
+## v0.1.4 (2012-03-17) ##
+
+* Take into account the fact that sometimes the data passed to a Series may be an array of arrays.
+* Remove Highcharts::VERSION constant.
+
 ## v0.1.3 (2012-03-17) ##
 
 * require Highcharts::Series.
