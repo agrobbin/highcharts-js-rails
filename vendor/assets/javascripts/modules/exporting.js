@@ -1,5 +1,5 @@
 /**
- * @license Highcharts JS v2.2.1 (2012-03-15)
+ * @license @product.name@ JS v@product.version@ (@product.date@)
  * Exporting module
  *
  * (c) 2010-2011 Torstein Hønsi
@@ -272,6 +272,8 @@ extend(Chart.prototype, {
 			.replace(/url\([^#]+#/g, 'url(#')
 			.replace(/<svg /, '<svg xmlns:xlink="http://www.w3.org/1999/xlink" ')
 			.replace(/ href=/g, ' xlink:href=')
+			.replace(/\n/, ' ')
+			.replace(/<\/svg>.*?$/, '</svg>') // any HTML added to the container after the SVG (#894)
 			/* This fails in IE < 8
 			.replace(/([0-9]+)\.([0-9]+)/g, function(s1, s2, s3) { // round off to save weight
 				return s2 +'.'+ s3[0];
@@ -320,7 +322,8 @@ extend(Chart.prototype, {
 		// create the form
 		form = createElement('form', {
 			method: 'post',
-			action: options.url
+			action: options.url,
+			enctype: 'multipart/form-data'
 		}, {
 			display: NONE
 		}, doc.body);
@@ -606,7 +609,7 @@ extend(Chart.prototype, {
 				btnOptions.symbol,
 				btnOptions.symbolX - (symbolSize / 2),
 				btnOptions.symbolY - (symbolSize / 2),
-				symbolSize,				
+				symbolSize,
 				symbolSize
 			)
 			.align(btnOptions, true)
@@ -659,7 +662,7 @@ function crisp(arr) {
 	var i = arr.length;
 	while (i--) {
 		if (typeof arr[i] === 'number') {
-			arr[i] = Math.round(arr[i]) - 0.5;		
+			arr[i] = Math.round(arr[i]) - 0.5;
 		}
 	}
 	return arr;

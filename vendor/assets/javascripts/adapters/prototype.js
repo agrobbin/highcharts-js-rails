@@ -1,5 +1,5 @@
 /**
- * @license Highcharts JS v2.2.1 (2012-03-15)
+ * @license @product.name@ JS v@product.version@ (@product.date@)
  * Prototype adapter
  *
  * @author Michael Nelson, Torstein Hønsi.
@@ -84,13 +84,13 @@ return {
 
 					if (element.attr) { // SVGElement
 						element.attr(this.options.attribute, position);
-					
+
 					} else { // HTML, #409
 						obj = {};
 						obj[this.options.attribute] = position;
 						$(element).setStyle(obj);
 					}
-					
+
 				},
 				finish: function () {
 					// Delete the property that holds this animation now that it is finished.
@@ -228,6 +228,10 @@ return {
 			HighchartsAdapter._extend(el);
 			el._highcharts_stop_observing(event, handler);
 		}
+	},
+
+	washMouseEvent: function (e) {
+		return e;
 	},
 
 	// um, grep

@@ -1,5 +1,5 @@
 /**
- * @license Highcharts JS v2.2.1 (2012-03-15)
+ * @license @product.name@ JS v@product.version@ (@product.date@)
  * MooTools adapter
  *
  * (c) 2010-2011 Torstein Hønsi
@@ -283,6 +283,15 @@ win.HighchartsAdapter = {
 		if (defaultFunction) {
 			defaultFunction(event);
 		}
+	},
+
+	/**
+	 * Set back e.pageX and e.pageY that MooTools has abstracted away
+	 */
+	washMouseEvent: function (e) {
+		e.pageX = e.page.x;
+		e.pageY = e.page.y;
+		return e;
 	},
 
 	/**
