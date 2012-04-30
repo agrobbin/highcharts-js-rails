@@ -1,3 +1,7 @@
+## v0.1.5 (2012-04-30) ##
+
+* Update Highcharts to 2.2.2.
+
 ## v0.1.4 (2012-03-17) ##
 
 * Take into account the fact that sometimes the data passed to a Series may be an array of arrays.
