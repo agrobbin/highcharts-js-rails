@@ -1,3 +1,7 @@
+## v0.1.6 (2012-05-16) ##
+
+* Update Highcharts to 2.2.3.
+
 ## v0.1.5 (2012-04-30) ##
 
 * Update Highcharts to 2.2.2.
