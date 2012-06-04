@@ -4,6 +4,9 @@ class Highcharts
     def initialize(opts = {})
       @default = :enabled
       @skip_quotation = :labelFormatter
+      @suboptions = {
+        :navigation => 'Base'
+      }
       super
     end
 

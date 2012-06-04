@@ -3,7 +3,7 @@ class Highcharts
 
     def initialize(opts = {})
       @default = :enabled
-      @skip_quotation = :formatter
+      @skip_quotation = [:formatter, :positioner]
       super
     end
 
