@@ -1,3 +1,10 @@
+## v0.1.7 (2012-06-04) ##
+
+* Update Highcharts to 2.2.4.
+* Take new parts of the API into account:
+  * Legend.navigation suboption
+  * Tooltip.positioner function
+
 ## v0.1.6 (2012-05-16) ##
 
 * Update Highcharts to 2.2.3.
