@@ -1,3 +1,7 @@
+## v0.1.9 (2012-06-21) ##
+
+* Update Highcharts to 2.2.5.
+
 ## v0.1.8 (2012-06-14) ##
 
 * Allow the additional assets to be easily accessible within a highcharts subdirectory.
