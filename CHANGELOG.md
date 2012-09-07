@@ -1,3 +1,9 @@
+## v0.1.10 (2012-09-06) ##
+
+* Update Highcharts to 2.3.2.
+* Take new parts of the API into account:
+  * PlotOptions for arearange, areasplinerange, columnrange, and gauge.
+
 ## v0.1.9 (2012-06-21) ##
 
 * Update Highcharts to 2.2.5.
