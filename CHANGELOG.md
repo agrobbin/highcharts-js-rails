@@ -1,3 +1,8 @@
+## v0.1.11 (2012-12-13) ##
+
+* Add support for series data point hashes. (Thanks tanelj!)
+* Update Highcharts to 2.3.3.
+
 ## v0.1.10 (2012-09-06) ##
 
 * Update Highcharts to 2.3.2.
