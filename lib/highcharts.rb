@@ -30,7 +30,7 @@ class Highcharts < ActionView::Base
         # For xAxis, yAxis, and series, we need to take the array that is passed as the option
         # and for each value, instantiate a new class.
         @options[method] = if %w(xAxis yAxis series).include?(method.to_s)
-          args.first.collect {|v| determine_method_class(method).constantize.new(v)}
+          Array.wrap(args.first).collect {|v| determine_method_class(method).constantize.new(v)}
         # For all others, just instantiate the class with the original arguments.
         else
           determine_method_class(method).constantize.new(*args)
