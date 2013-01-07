@@ -16,6 +16,8 @@ class Highcharts < ActionView::Base
       'xAxis' => 'Axis::X',
       'yAxis' => 'Axis::Y'
     }
+
+    yield self
   end
 
   def inspect
