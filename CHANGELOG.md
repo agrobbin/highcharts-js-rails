@@ -1,3 +1,9 @@
+## v0.2.0 (2013-01-07) ##
+
+* Allow block syntax for Highcharts.new.
+* Allow a Hash to be passed to xAxis, yAxis, or series instead of an Array of 1 Hash.
+* Update Highcharts to 2.3.5.
+
 ## v0.1.11 (2012-12-13) ##
 
 * Add support for series data point hashes. (Thanks tanelj!)
