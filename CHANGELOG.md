@@ -1,3 +1,7 @@
+## v0.2.1 (2013-02-25) ##
+
+* Loosen dependency on railties to allow 4.0.
+
 ## v0.2.0 (2013-01-07) ##
 
 * Allow block syntax for Highcharts.new.
