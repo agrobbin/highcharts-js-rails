@@ -8,8 +8,8 @@ class Highcharts < ActionView::Base
   def initialize
     @options = {}
 
-    @base_options = %w(labels lang loading)
-    @default_options = %w(chart colors credits legend point series symbols title tooltip)
+    @base_options = %w(global labels lang loading navigation pane)
+    @default_options = %w(chart colors credits legend series title tooltip)
     @custom_options = {
       'plotOptions' => 'PlotOptions',
       'subtitle' => 'Title',
