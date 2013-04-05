@@ -1,5 +1,3 @@
-require 'rails'
-
 class Highcharts
   class Base
 
@@ -19,6 +17,7 @@ class Highcharts
           raise ArgumentError, "You must pass a Hash to #{self.class}. You passed #{options.inspect}"
         end
       end
+
       # If there is an option that is available as a suboption to the current class,
       # let's set the option to an instance of that subclass.
       options.each do |k, v|
@@ -41,12 +40,13 @@ class Highcharts
       json.join(',')
     end
 
-    # This method is used in #to_json to remove the first and last characters from an option's value.
-    # In the end this removes the encapsulating quotation marks (") from a specific option, provided
-    # it is included in the current class's skip_quotation array.
-    def check_quotation(key, json)
-      skip_quotation.present? && Array.wrap(skip_quotation).include?(key) ? json[1..-2] : json
-    end
+    private
+      # This method is used in #to_json to remove the first and last characters from an option's value.
+      # In the end this removes the encapsulating quotation marks (") from a specific option, provided
+      # it is included in the current class's skip_quotation array.
+      def check_quotation(key, json)
+        skip_quotation.present? && Array.wrap(skip_quotation).include?(key) ? json[1..-2] : json
+      end
 
   end
 end

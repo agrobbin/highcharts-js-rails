@@ -1,4 +1,5 @@
 require 'action_view'
+require 'active_support/core_ext/object/to_json'
 
 class Highcharts < ActionView::Base
   include ActionView::Helpers
@@ -17,7 +18,7 @@ class Highcharts < ActionView::Base
       'yAxis' => 'Axis::Y'
     }
 
-    yield self
+    yield self if block_given?
   end
 
   def inspect
