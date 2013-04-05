@@ -3,8 +3,8 @@ class Highcharts
 
     def initialize(opts = {})
       @suboptions = {
-        :events => 'Point::Events',
-        :marker => 'Base'
+        events: 'Point::Events',
+        marker: 'Base'
       }
       super
     end

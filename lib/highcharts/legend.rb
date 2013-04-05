@@ -5,7 +5,7 @@ class Highcharts
       @default = :enabled
       @skip_quotation = :labelFormatter
       @suboptions = {
-        :navigation => 'Base'
+        navigation: 'Base'
       }
       super
     end

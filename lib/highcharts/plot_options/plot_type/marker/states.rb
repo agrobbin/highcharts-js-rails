@@ -6,8 +6,8 @@ class Highcharts
 
           def initialize(opts = {})
             @suboptions = {
-              :hover => 'Base',
-              :select => 'Base'
+              hover: 'Base',
+              select: 'Base'
             }
             super
           end

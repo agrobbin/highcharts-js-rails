@@ -7,11 +7,11 @@ class Highcharts
       def initialize(opts = {})
         @default = :categories
         @suboptions = {
-          :events => 'Axis::Events',
-          :labels => 'Labels',
-          :plotBands => 'Axis::PlotBands',
-          :plotLines => 'Axis::PlotLines',
-          :title => 'Title'
+          events: 'Axis::Events',
+          labels: 'Labels',
+          plotBands: 'Axis::PlotBands',
+          plotLines: 'Axis::PlotLines',
+          title: 'Title'
         }
         # Check to see if we want to skip automatic formatting of categories.
         @skip_category_formatting = true if opts.delete(:skip_category_formatting)
@@ -40,7 +40,7 @@ class Highcharts
         #   DateTime
         #
         # If the class of the category is none of the above, #to_s is returned.
-        # You can prevent this by passing :skip_category_formatting => true to the Axis options.
+        # You can prevent this by passing `skip_category_formatting: true` to the Axis options.
         def format_category(category)
           case category
           when Date

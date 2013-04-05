@@ -5,7 +5,7 @@ class Highcharts
 
         def initialize(opts = {})
           @suboptions = {
-            :hover => 'PlotOptions::PlotType::States::Hover'
+            hover: 'PlotOptions::PlotType::States::Hover'
           }
           super
         end

@@ -6,7 +6,7 @@ class Highcharts
 
           def initialize(opts = {})
             @suboptions = {
-              :marker => 'Base'
+              marker: 'Base'
             }
             super
           end

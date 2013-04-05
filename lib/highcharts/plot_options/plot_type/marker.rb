@@ -6,7 +6,7 @@ class Highcharts
         def initialize(opts = {})
           @default = :enabled
           @suboptions = {
-            :states => 'PlotOptions::PlotType::Marker::States'
+            states: 'PlotOptions::PlotType::Marker::States'
           }
           super
         end

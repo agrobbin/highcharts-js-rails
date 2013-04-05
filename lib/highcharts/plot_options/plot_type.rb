@@ -4,13 +4,13 @@ class Highcharts
 
       def initialize(opts = {})
         @suboptions = {
-          :dataLabels => 'Labels',
-          :dial => 'Base',
-          :events => 'PlotOptions::PlotType::Events',
-          :marker => 'PlotOptions::PlotType::Marker',
-          :pivot => 'Base',
-          :point => 'Point',
-          :states => 'PlotOptions::PlotType::States'
+          dataLabels: 'Labels',
+          dial: 'Base',
+          events: 'PlotOptions::PlotType::Events',
+          marker: 'PlotOptions::PlotType::Marker',
+          pivot: 'Base',
+          point: 'Point',
+          states: 'PlotOptions::PlotType::States'
         }
         super
       end

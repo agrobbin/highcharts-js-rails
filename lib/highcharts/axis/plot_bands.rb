@@ -4,7 +4,7 @@ class Highcharts
 
       def initialize(opts = {})
         @suboptions = {
-          :label => 'Base'
+          label: 'Base'
         }
         super
       end
