@@ -1,6 +1,4 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-
 Gem::Specification.new do |s|
   s.name        = 'highcharts-js-rails'
   s.version     = '0.2.1'
