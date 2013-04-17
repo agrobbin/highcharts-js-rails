@@ -2,7 +2,7 @@
 // @compilation_level SIMPLE_OPTIMIZATIONS
 
 /**
- * @license Highcharts JS v3.0.0 (2013-03-22)
+ * @license Highcharts JS v3.0.1 (2013-04-09)
  *
  * (c) 2009-2013 Torstein Hønsi
  *
@@ -1292,6 +1292,7 @@ seriesTypes.boxplot = extendClass(seriesTypes.column, {
           'M',
           left,
           medianPlot,
+          'L',
           right,
           medianPlot,
           'z'
@@ -1916,7 +1917,7 @@ seriesTypes.bubble = extendClass(seriesTypes.scatter, {
           height: 2 * radius
         };
       } else { // below zThreshold
-        point.shapeArgs = point.plotY = point.dlBox = null;
+        point.shapeArgs = point.plotY = point.dlBox = UNDEFINED; // #1691
       }
     }
   },
@@ -1964,6 +1965,9 @@ Axis.prototype.beforePadding = function () {
     transA = axisLength / range,
     activeSeries = [];
 
+  // Correction for #1673
+  this.allowZoomOutside = true;
+
   // Handle padding on the second pass, or on redraw
   if (this.tickPositions) {
     each(this.series, function (series) {
@@ -2000,6 +2004,7 @@ Axis.prototype.beforePadding = function () {
               seriesOptions.displayNegative === false ? seriesOptions.zThreshold : -Number.MAX_VALUE
             )
           );
+
           zMax = math.max(zMax, arrayMax(zData));
         }
       }
@@ -2024,7 +2029,7 @@ Axis.prototype.beforePadding = function () {
       }
     });
 
-    if (range > 0 && pick(this.options.min, this.userMin) === UNDEFINED) {
+    if (range > 0 && pick(this.options.min, this.userMin) === UNDEFINED && pick(this.options.max, this.userMax) === UNDEFINED) {
       pxMax -= axisLength;
       transA *= (axisLength + pxMin - pxMax) / axisLength;
       this.min += pxMin / transA;
