@@ -1,3 +1,10 @@
+## v1.0.0 (2013-04-18) ##
+
+* Upgrade Highcharts to 3.0.1.
+* Allow both new block-style chart initialization and older chart initialization.
+* Drop any possible support for Ruby 1.8.7.
+* Build out a test suite for the finer points of this gem, including Travis CI support.
+
 ## v0.2.1 (2013-02-25) ##
 
 * Loosen dependency on railties to allow 4.0.

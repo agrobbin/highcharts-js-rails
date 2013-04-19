@@ -26,6 +26,10 @@ Many have a default option assigned to them. Those that have one are listed belo
 * yAxis.labels: enabled (Boolean)
 * yAxis.title: text (String)
 
+## Requirements
+
+Highcharts JS Rails requires **Ruby 1.9.2+** and **Rails 3.1+**.
+
 ## xAxis Notes
 
 * The `categories` option's array of values will be automatically formatted based on its class unless you pass :skip_category_formatting => true.

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name        = 'highcharts-js-rails'
-  s.version     = '0.2.1'
+  s.version     = '1.0.0'
   s.authors     = ['Alex Robbin']
   s.email       = ['alex@robbinsweb.biz']
   s.homepage    = 'https://github.com/agrobbin/highcharts-js-rails'
