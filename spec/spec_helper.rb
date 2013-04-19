@@ -1,7 +1,7 @@
-# For simplecov
-# https://github.com/colszowka/simplecov
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_filter 'spec'
+end
 
 require 'rspec'
-require 'highcharts'
+require 'highcharts-js-rails'

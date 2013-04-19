@@ -46,8 +46,6 @@ class Highcharts
           when Date
             category.strftime("%b. %d")
           when Time || DateTime
-          #   category.strftime("%H:%M")
-          # when DateTime
             category.strftime("%b. %d, %H:%M")
           else
             category.to_s

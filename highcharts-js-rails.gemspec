@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.name        = 'highcharts-js-rails'
   s.version     = '0.2.1'
   s.authors     = ['Alex Robbin']
-  s.email       = ['agrobbin@gmail.com']
+  s.email       = ['alex@robbinsweb.biz']
   s.homepage    = 'https://github.com/agrobbin/highcharts-js-rails'
   s.summary     = %q{Easily configure a Highcharts JS chart for use in a Rails application}
   s.description = s.summary

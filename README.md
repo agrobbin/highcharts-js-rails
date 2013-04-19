@@ -1,5 +1,6 @@
-Highcharts JS Rails
-===================
+# Highcharts JS Rails
+
+[![Build Status](https://secure.travis-ci.org/agrobbin/highcharts-js-rails.png?branch=master)](https://travis-ci.org/agrobbin/highcharts-js-rails) [![Dependency Status](https://gemnasium.com/agrobbin/highcharts-js-rails.png)](https://gemnasium.com/agrobbin/highcharts-js-rails)
 
 Easily configure a Highcharts JS chart for use in a Rails application.
 
@@ -25,16 +26,14 @@ Many have a default option assigned to them. Those that have one are listed belo
 * yAxis.labels: enabled (Boolean)
 * yAxis.title: text (String)
 
-xAxis Notes
--------
+## xAxis Notes
 
 * The `categories` option's array of values will be automatically formatted based on its class unless you pass :skip_category_formatting => true.
 * The `tickInterval` option is only necessary if you want to override automatic tickInterval creation. If the option is not passed or :auto is passed, the tickInterval will be calculated based on the number of categories passed.
 
 For the xAxis, yAxis, and series options, you must pass an array of hashes. Each of those hashes will be converted into the appropriate set of options.
 
-Example
---------
+## Example
 
 Ruby:
 
